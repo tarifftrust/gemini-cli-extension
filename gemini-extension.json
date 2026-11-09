@@ -1,0 +1,22 @@
+{
+  "name": "tarifftrust",
+  "version": "1.0.0",
+  "description": "US import duties and fees for an HTS code, an origin and a value, each with its official source.",
+  "settings": [
+    {
+      "name": "TariffTrust API key",
+      "description": "Your TariffTrust API key, created at https://tarifftrust.com/keys/",
+      "envVar": "TARIFFTRUST_API_KEY",
+      "sensitive": true
+    }
+  ],
+  "mcpServers": {
+    "tarifftrust": {
+      "httpUrl": "https://api.tarifftrust.com/mcp/",
+      "headers": {
+        "Authorization": "Bearer ${TARIFFTRUST_API_KEY}"
+      }
+    }
+  },
+  "contextFileName": "GEMINI.md"
+}
